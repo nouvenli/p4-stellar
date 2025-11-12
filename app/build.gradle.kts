@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "fr.quinenaire.stellarforecast"
+    namespace = "fr.quinenaire.IceRush"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "fr.quinenaire.stellarforecast"
+        applicationId = "fr.quinenaire.IceRush"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

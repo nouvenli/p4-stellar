@@ -1,4 +1,4 @@
-package fr.quinenaire.stellarforecast
+package fr.quinenaire.IceRush
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

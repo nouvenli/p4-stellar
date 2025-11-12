@@ -1,4 +1,4 @@
-package fr.quinenaire.stellarforecast
+package fr.quinenaire.IceRush
 
 import org.junit.Test
 

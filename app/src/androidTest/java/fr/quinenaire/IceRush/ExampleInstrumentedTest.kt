@@ -1,4 +1,4 @@
-package fr.quinenaire.stellarforecast
+package fr.quinenaire.IceRush
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("fr.quinenaire.stellarforecast", appContext.packageName)
+        assertEquals("fr.quinenaire.IceRush", appContext.packageName)
     }
 }

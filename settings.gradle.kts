@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "StellarForecast"
+rootProject.name = "IceRush"
 include(":app")
  

@@ -1,4 +1,4 @@
-package fr.quinenaire.stellarforecast
+package fr.quinenaire.IceRush
 
 import dagger.hilt.android.HiltAndroidApp
 import android.app.Application

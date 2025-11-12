@@ -1,8 +1,8 @@
-package fr.quinenaire.stellarforecast.data.response
+package fr.quinenaire.IceRush.data.response
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import fr.quinenaire.stellarforecast.domain.model.WeatherReportModel
+import fr.quinenaire.IceRush.domain.model.SnowReportModel
 import java.util.Calendar
 
 /**
@@ -65,14 +65,14 @@ data class OpenWeatherForecastsResponse(
     }
 
     /**
-     * connection between WeatherReportModel, and OpenWeatherForecastsResponse
+     * connection between SnowReportModel, and OpenWeatherForecastsResponse
      */
-    fun toDomainModel(): List<WeatherReportModel> {
+    fun toDomainModel(): List<SnowReportModel> {
         return forecasts.map { forecast ->
             val calendar = Calendar.getInstance().apply { timeInMillis = forecast.time * 1000L }
 
-            // Check if the sky is clear (IDs 800 to 802 indicate clear sky conditions)
-            val isClearSky = forecast.weather.isNotEmpty() && forecast.weather[0].id in 800..802
+            // Check if the sky is clear (IDs 600 to 622 indicate clear sky conditions)
+            val isClearSky = forecast.weather.isNotEmpty() && forecast.weather[0].id in 600..622
 
             // Get the hour of the date and determine if it's night
             val hourOfDay = calendar.get(Calendar.HOUR_OF_DAY)
@@ -81,8 +81,12 @@ data class OpenWeatherForecastsResponse(
             // Convert temperature to Celsius
             val temperatureCelsius = (forecast.temperature.temp - 273.15).toInt()
 
-            WeatherReportModel(
-                isGoodForStargazing = isClearSky && isNight,
+            // find when rain is expected
+            val isRaining = forecast.weather[0].id in 500..531
+
+
+            SnowReportModel(
+                isRaining = isRaining,
                 date = calendar,
                 temperatureCelsius = temperatureCelsius,
                 weatherTitle = forecast.weather[0].title,

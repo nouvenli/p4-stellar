@@ -1,9 +1,9 @@
-package fr.quinenaire.stellarforecast.domain.model
+package fr.quinenaire.IceRush.domain.model
 
 import java.util.Calendar
 
-data class WeatherReportModel(
-    val isGoodForStargazing: Boolean,
+data class SnowReportModel(
+    val isRaining: Boolean,
     val date: Calendar,
     val temperatureCelsius: Int,
     val weatherTitle: String,
